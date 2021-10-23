@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/alta.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Buscar odontologo</title>
+</head>
+
+<body>
+    <div class="formulario">
+        <h3 class="title2">Buscar Peluquero</h3>
+        <div class="row">
+            <div class="col-sm-7">
+                <form id="search_odontologo" class="add">
+                    <div class="form-group">
+                        <label class="control-label" for="matricula">Matricula:</label>
+                        <input type="number" class="form-control" id="matricula" placeholder="Ingrese matrícula" name="matricula" required></input>
+                    </div>
+                    <button type="submit" class="btn btn-danger" id="btn-search-odontologo">Buscar</button>
+                </form>
+                <div id="response" style="display:none; margin-top:10px"></div>
+            </div>
+        </div>
+    </div>
+    <div id="div_odontologo_table" class="tabla">
+        <div class="row col-md-6 table-responsive">
+            <table id="odontologoTable" class="table table-striped">
+                <thead>
+                    <tr>
+                        <th>Id</th>
+                        <th>Nombre</th>
+                        <th>Apellido</th>
+                        <th>Matricula</th>
+                    </tr>
+                </thead>
+                <tbody>
+                </tbody>
+            </table>
+        </div>
+    </div>
+    <div class="end">
+        <a class="nav-ref" href="./odontologos.html">Volver</a>
+    </div>
+    <script type="text/javascript" src="/js/buscarPeluqueros.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,91 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #6d92b7 !important;
+}
+
+nav{
+    background-color: #395979;
+}
+
+.alert-success, .alert-danger  {
+    margin-left: 20px;
+}
+
+.nav-ul, .end {
+    height: 80px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 0px;
+    background-color: #b9e6de;
+}
+
+.end {
+    position: absolute;
+    bottom: 0;
+    height: 90px;
+    width: 100%;
+}
+
+.nav-li {
+    margin-top: 10px;
+    margin-bottom: 0px;
+}
+
+ul {
+    list-style: none;
+}
+
+.nav-ref {
+    color: #621117;
+    padding: 4px;
+}
+
+.nav-ref:hover {
+    color: #2E090C;
+    text-decoration: none;
+}
+
+.title2 {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    font-size: 30px;
+    padding: 10px;
+}
+
+th {
+    background-color: #9F474D;
+}
+
+td {
+    background-color: #FFF;
+}
+
+strong {
+    background-color: inherit;
+}
+
+.fecha, .hora, .paciente, .odontologo {
+    background-color: #FFF;
+}
+
+.tabla {
+    padding-left: 20px;
+    padding-top: 20px;
+}
+
+.add {
+    padding-left: 20px;
+}
+
+.titleDiv{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 !important;
+}
