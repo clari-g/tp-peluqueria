@@ -1,0 +1,60 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap');
+body {
+    margin: 0;
+    padding: 0;
+    background-color: #6d92b7 !important;
+}
+
+nav{
+    background-color: #395979;
+}
+
+.fondo {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.end {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    width: 25%;
+    padding-left: 20px;
+}
+
+.title2 {
+    color: #FFF;
+    font-family: 'Montserrat', sans-serif;
+    text-align: left;
+    font-size: 30px;
+    padding: 10px;
+}
+
+tr {
+    color: #FFF;
+}
+
+td {
+    color: black
+}
+
+strong {
+    background-color: inherit;
+}
+
+.tabla {
+    padding-left: 20px;
+}
+
+.btn-edit {
+    margin-right: 10%;
+}
+
+.titleDiv{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    padding: 0 !important;
+}

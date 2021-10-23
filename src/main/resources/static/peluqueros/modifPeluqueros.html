@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="../styles/alta.css">
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+        <title>Modificar Peluqueros</title>
+    </head>
+    <body>
+        <nav class="navbar navbar-expand-lg navbar-dark">
+            <a class="navbar-brand" href="#">
+                <img src="../styles/perro.png" width="45" height="45" alt="perro">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarText">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="../index.html">Home</a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./peluqueros.html">Peluqueros <span class="sr-only">(current)</span></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../perros/perros.html">Perros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="../turnos/turnos.html">Turnos</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+        <div class="formulario">
+            <h3 class="title2">Modificar Peluquero</h3>
+            <div>
+                <div class="col-sm-7">
+                    <form id="modify_peluquero" class="add">
+                        <div class="form-group">
+                            <label class="control-label" for="id">ID:</label>
+                            <input type="text" class="form-control" id="id" name="id" required disabled></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="nombre">Nombre:</label>
+                            <input type="text" class="form-control" id="nombre" placeholder="Ingrese nombre" name="nombre" required></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="apellido">Apellido:</label>
+                            <input type="text" class="form-control" id="apellido" placeholder="Ingrese apellido" name="apellido" required></input>
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label" for="matricula">Matricula:</label>
+                            <input type="number" class="form-control" id="matricula" placeholder="Ingrese matrícula" name="matricula" required></input>
+                        </div>
+                        <button type="submit" class="btn btn-danger" id="btn-add-new-peluquero">Actualizar</button>
+                    </form>
+                    <div id="response" style="display:none; margin-top:10px">
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript" src="/js/putPeluqueros.js"></script>
+    </body>
+</html>

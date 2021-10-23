@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="../styles/alta.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+    <title>Alta Turnos</title>
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="../styles/perro.png" width="45" height="45" alt="perro">
+        </a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarText">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../peluqueros/peluqueros.html">Peluqueros</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../perros/perros.html">Perros</a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="./turnos.html">Turnos <span class="sr-only">(current)</span></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="formulario">
+        <h3 class="title2">Agregar Turno</h3>
+        <div class="row">
+            <div class="col-sm-7">
+                <form id="add_new_turno" class="add">
+                    <div class="form-group">
+                        <label class="control-label" for="paciente">Paciente:</label>
+                        <select name="paciente" id="paciente" class="paciente" required>
+                            <option>Pacientes</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="apellido">Odontólogo:</label>
+                        <select name="odontologo" id="odontologo" class="odontologo" required>
+                            <option>Odontologos</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="fecha">Fecha:</label>
+                        <input type="date" id="fecha" class="fecha" name="fecha" min="2021-01-01" required>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label" for="hora">Hora:</label>
+                        <input type="time" id="hora" class="hora" name="hora" value="08:00" min="08:00" max="18:00" required>
+                    </div>
+                    <button type="submit" class="btn btn-danger" id="btn-add-new-odontologo">Agregar</button>
+                </form>
+                <div id="response" style="display:none; margin-top:10px"></div>
+            </div>
+        </div>
+    </div>
+    <div class="end">
+        <a class="nav-ref" href="./turnos.html">Volver</a>
+    </div>
+    <script type="text/javascript" src="/js/postTurnos.js"></script>
+</body>
+
+</html>
