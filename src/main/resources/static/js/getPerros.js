@@ -16,7 +16,6 @@ async function loadPerros() {
 function renderResults(data) {
     const perrosTabla = document.querySelector('tbody')
     perrosTabla.innerHTML = ''
-    newData = data
     data.forEach(async element => {
         const info = {
             id: element.id,

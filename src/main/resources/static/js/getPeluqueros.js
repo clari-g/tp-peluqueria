@@ -16,7 +16,6 @@ async function loadPeluqueros() {
 function renderResults(data) {
     const peluquerosTabla = document.querySelector('tbody')
     peluquerosTabla.innerHTML = ''
-    newData = data
     data.forEach(async element => {
         const info = {
             id: element.id,

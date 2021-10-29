@@ -16,15 +16,13 @@ async function loadTurnos() {
 function renderResults(data) {
     const turnos = document.querySelector('tbody')
     turnos.innerHTML = ''
-    newData = data
-    console.log(data)
     data.forEach(async element => {
         const info = {
             id: element.id,
             perro: element.perro.nombre,
-            peluquero: element.peluquero.nombre,
-            date: element.date,
-            time: element.time
+            peluquero: element.peluquero.nombre + ' ' + element.peluquero.apellido,
+            date: moment(element.date + ' ' + element.time).format('DD/MM/YYYY'),
+            time: moment(element.date + ' ' + element.time).format('hh:mm')
         }
 
         const row = document.createElement('tr')

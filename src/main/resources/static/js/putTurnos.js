@@ -1,5 +1,4 @@
 window.onload = async function (event) {
-    event.preventDefault()
     const url = '/perros'
     const settings = {
         method: 'GET'
@@ -12,6 +11,13 @@ window.onload = async function (event) {
     const response1 = await fetch(url1, settings)
     const data1 = await response1.json()
     renderResultsPeluquero(data1)
+
+    let params = (new URL(document.location)).searchParams;
+    let id = params.get("id");
+    const url2 = '/turnos/get/' + id
+    const response2 = await fetch(url2, settings)
+    const data2 = await response2.json()
+    loadForm(data2)
 }
 
 function renderResultsPerro(data) {
@@ -36,47 +42,49 @@ function renderResultsPeluquero(data) {
     }
 }
 
-const formulario = document.querySelector('#add_new_turno')
+const formulario = document.querySelector('#modify_turno')
+
 formulario.addEventListener('submit', function(event) {
     event.preventDefault()
 
     const formData = {
-        perro: {id: document.querySelector('#perro').value},
-        peluquero: {id: document.querySelector('#peluquero').value},
-        date: document.querySelector('#fecha').value,
-        time: document.querySelector('#hora').value
-    }
-    const url = '/turnos/guardar'
+            id: document.querySelector('#id').value,
+            perro: {id: document.querySelector('#perro').value},
+            peluquero: {id: document.querySelector('#peluquero').value},
+            date: document.querySelector('#fecha').value,
+            time: document.querySelector('#hora').value
+        }
+    const url = '/turnos/actualizar'
     const settings = {
-        method: 'POST',
+        method: 'PUT',
         headers: {
             'Content-Type': 'application/json',
         },
         body: JSON.stringify(formData)
     }
+
     fetch(url, settings)
     .then(response => response.json())
     .then(data => {
-        console.log(data);
-        let successAlert = `<div class='alert alert-success alert-dismissible'>` + 
-        `<button type='button' class='close' data-dismiss='alert'>&times;</button>` + 
-        `<strong>Turno guardado con éxito.</strong></div>`
+        let successAlert = `<div class='alert alert-success alert-dismissible'>` +
+        `<button type='button' class='close' data-dismiss='alert'>&times;</button>` +
+        `<strong>Turno actualizado con éxito.</strong></div>`
         $('#response').append(successAlert)
         $('#response').css({"display":"block"})
     })
     .catch(error => {
-        let errorAlert = `<div class='alert alert-danger alert-dismissible'>` + 
-        `<button type='button' class='close' data-dismiss='alert'>&times;</button>` + 
+        let errorAlert = `<div class='alert alert-danger alert-dismissible'>` +
+        `<button type='button' class='close' data-dismiss='alert'>&times;</button>` +
         `<strong>Error. Intente nuevamente.</strong></div>`
         $('#response').append(errorAlert)
         $('#response').css({"display":"block"})
     })
-    resetUploadForm();
 })
 
-function resetUploadForm(){
-    $("#perro").val("");
-    $("#peluquero").val("");
-    $("#fecha").val("");
-    $("#hora").val("");
+function loadForm(data){
+    $("#id").val(data.id);
+    $("#perro").val(data.perro.id);
+    $("#peluquero").val(data.peluquero.id);
+    $("#fecha").val(data.date);
+    $("#hora").val(data.time);
 }

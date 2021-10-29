@@ -70,9 +70,9 @@ strong {
     background-color: inherit;
 }
 
-.fecha, .hora, .paciente, .odontologo {
+/*.fecha, .hora, .paciente, .odontologo {
     background-color: #FFF;
-}
+}*/
 
 .tabla {
     padding-left: 20px;

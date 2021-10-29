@@ -2,6 +2,7 @@ package com.izo.veterinaria.service;
 
 
 import com.izo.veterinaria.model.Peluquero;
+import com.izo.veterinaria.model.Turno;
 import com.izo.veterinaria.repository.PeluqueroRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

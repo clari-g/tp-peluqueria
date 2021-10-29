@@ -1,43 +1,37 @@
 window.onload = async function (event) {
     event.preventDefault()
-    const url = '/pacientes'
+    const url = '/perros'
     const settings = {
         method: 'GET'
     }
     const response = await fetch(url, settings)
     const data = await response.json()
-    renderResultsPaciente(data)
-    const url1 = '/odontologos'
+    renderResultsPerro(data)
+
+    const url1 = '/peluqueros'
     const response1 = await fetch(url1, settings)
     const data1 = await response1.json()
-    renderResultsOdontologo(data1)
+    renderResultsPeluquero(data1)
 }
 
-const pacientes = document.querySelector('#paciente')
-function renderResultsPaciente(data) {
-    newData = data
+function renderResultsPerro(data) {
+    const perros = document.querySelector('#perro');
+    perros.innerHTML = '';
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
-        const info = {
-            dni: element.dni
-        }
-        pacientes.innerHTML += `
-        <option value=${info.dni}>${info.dni}</option> 
+        perros.innerHTML += `
+        <option value=${element.id}>${element.nombre}</option>
         `
     }
 }
 
-const odontologos = document.querySelector('#odontologo')
-function renderResultsOdontologo(data) {
-    newData = data
-
+function renderResultsPeluquero(data) {
+    const peluqueros = document.querySelector('#peluquero');
+    peluqueros.innerHTML = '';
     for (let i = 0; i < data.length; i++) {
         const element = data[i];
-        const info = {
-            matricula: element.matricula
-        }
-        odontologos.innerHTML += `
-        <option value=${info.matricula}>${info.matricula}</option> 
+        peluqueros.innerHTML += `
+        <option value=${element.id}>${element.nombre} ${element.apellido}</option>
         `
     }
 }
@@ -47,12 +41,12 @@ formulario.addEventListener('submit', function(event) {
     event.preventDefault()
 
     const formData = {
-        paciente: {dni: document.querySelector('#paciente').value},
-        odontologo: {matricula: document.querySelector('#odontologo').value},
+        perro: {id: document.querySelector('#perro').value},
+        peluquero: {id: document.querySelector('#peluquero').value},
         date: document.querySelector('#fecha').value,
         time: document.querySelector('#hora').value
     }
-    const url = '/turno/guardar'
+    const url = '/turnos/guardar'
     const settings = {
         method: 'POST',
         headers: {
@@ -66,7 +60,7 @@ formulario.addEventListener('submit', function(event) {
         console.log(data);
         let successAlert = `<div class='alert alert-success alert-dismissible'>` + 
         `<button type='button' class='close' data-dismiss='alert'>&times;</button>` + 
-        `<strong>Turno agregado con éxito.</strong></div>`
+        `<strong>Turno guardado con éxito.</strong></div>`
         $('#response').append(successAlert)
         $('#response').css({"display":"block"})
     })
@@ -81,8 +75,8 @@ formulario.addEventListener('submit', function(event) {
 })
 
 function resetUploadForm(){
-    $("#paciente").val("");
-    $("#odontologo").val("");
+    $("#perro").val("");
+    $("#peluquero").val("");
     $("#fecha").val("");
     $("#hora").val("");
 }

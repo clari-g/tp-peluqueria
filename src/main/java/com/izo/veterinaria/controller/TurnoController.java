@@ -51,8 +51,9 @@ public class TurnoController {
         if (turno != null) {
             Perro perro = perroService.buscarId(turno.getPerro().getId());
             turno.setPerro(perro);
-            Peluquero peluquero = peluqueroService.buscar(turno.getPeluquero().getMatricula());
+            Peluquero peluquero = peluqueroService.buscarId(turno.getPeluquero().getId());
             turno.setPeluquero(peluquero);
+
             response = ResponseEntity.ok(turnoService.guardar(turno));
         } else {
             response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
@@ -81,8 +82,15 @@ public class TurnoController {
     public ResponseEntity<Turno> actualizar(@RequestBody Turno turno) throws ResourceNotFoundException {
         ResponseEntity<Turno> response = null;
         try {
-            if (turnoService.buscar(turno.getId().intValue()) != null) {
+            var oldTurno = turnoService.buscarId(turno.getId());
+            if (oldTurno != null) {
+                Perro perro = perroService.buscarId(turno.getPerro().getId());
+                turno.setPerro(perro);
+                Peluquero peluquero = peluqueroService.buscarId(turno.getPeluquero().getId());
+                turno.setPeluquero(peluquero);
+
                 response = ResponseEntity.ok(turnoService.actualizar(turno));
+
             } else {
                 response = ResponseEntity.status(HttpStatus.NOT_FOUND).build();
             }
