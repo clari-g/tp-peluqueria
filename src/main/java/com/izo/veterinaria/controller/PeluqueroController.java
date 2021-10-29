@@ -39,18 +39,6 @@ public class PeluqueroController {
         }
     }
 
-    @GetMapping("/search/{matricula}")
-    public ResponseEntity<Peluquero> buscar(@PathVariable Integer matricula) throws ResourceNotFoundException {
-        Peluquero peluquero = null;
-        try {
-            peluquero = peluqueroService.buscar(matricula);
-            logger.info("GET matricula peluquero " + peluquero);
-        } catch(Exception e) {
-            logger.info("Ha habido un error: " + e);
-        }
-        return ResponseEntity.ok(peluquero);
-    }
-
     @PostMapping("/guardar")
     public ResponseEntity<Peluquero> guardar(@RequestBody Peluquero peluquero) {
         return ResponseEntity.ok(peluqueroService.guardar(peluquero));

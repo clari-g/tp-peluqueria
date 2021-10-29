@@ -21,22 +21,14 @@ public class PeluqueroService {
 
     // Métodos
 
-    /* Buscar todos los peluquero */
+    /* Buscar todos los peluqueros */
     public List<Peluquero> listar() {
         return peluqueroRepository.findAll();
     }
 
-    public Peluquero getById(Long id) {
-        return peluqueroRepository.getById(id);
-    }
-
+    /* Buscar peluqueros por id */
     public Peluquero buscarId(Long id) {
         return peluqueroRepository.buscarId(id).get();
-    }
-
-    /* Buscar peluquero por matricula */
-    public Peluquero buscar(Integer matricula) {
-        return peluqueroRepository.buscar(matricula).get();
     }
 
     /* Guardar un nuevo peluquero */

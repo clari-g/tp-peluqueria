@@ -17,10 +17,6 @@ public class Perro {
     private String raza;
     private String dueno;
 
-    // Relaciones
-    //@OneToMany(mappedBy = "paciente", fetch = FetchType.LAZY)
-    //private Set<Turno> turnos = new HashSet<>();
-
     // Constructores
     public Perro() {
     }

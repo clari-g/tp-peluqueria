@@ -15,10 +15,6 @@ public class Peluquero {
     private String apellido;
     private Integer matricula;
 
-    // Relaciones
-    //@OneToMany(mappedBy = "odontologo", fetch = FetchType.LAZY)
-    //private Set<Turno> turnos = new HashSet<>();
-
     // Constructores
     public Peluquero() {
     }
@@ -65,25 +61,4 @@ public class Peluquero {
         return peluquero;
     }
 
-    // ToString
-    @Override
-    public String toString() {
-        return "Peluquero{" +
-                "id=" + id +
-                ", nombre='" + nombre + '\'' +
-                ", apellido='" + apellido + '\'' +
-                ", matricula=" + matricula +
-                '}';
-    }
-
-    public JSONObject toJSON() {
-
-        JSONObject jo = new JSONObject();
-        jo.put("id", id);
-        jo.put("nombre", nombre);
-        jo.put("apellido", apellido);
-        jo.put("matricula", matricula);
-
-        return jo;
-    }
 }

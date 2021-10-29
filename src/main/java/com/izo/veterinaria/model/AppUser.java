@@ -107,15 +107,4 @@ public class AppUser implements UserDetails {
         this.roles = roles;
     }
 
-    @Override
-    public String toString() {
-        return "AppUser{" +
-                "id=" + id +
-                ", name='" + name + '\'' +
-                ", userName='" + username + '\'' +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", roles=" + roles +
-                '}';
-    }
 }

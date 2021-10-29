@@ -30,10 +30,6 @@ public class TurnoService {
         return turnoRepository.buscarId(id).get();
     }
 
-    public Turno buscar(Integer id) {
-        return turnoRepository.buscar(id).get();
-    }
-
     /* Guardar un nuevo Turno */
     public Turno guardar(Turno turno) {
         if (turno != null) {

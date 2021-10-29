@@ -75,14 +75,4 @@ public class Turno {
         this.time = time;
     }
 
-    @Override
-    public String toString() {
-        return "Turno{" +
-                "id=" + id +
-                ", perro=" + perro +
-                ", peluquero=" + peluquero +
-                ", date=" + date +
-                ", time=" + time +
-                '}';
-    }
 }

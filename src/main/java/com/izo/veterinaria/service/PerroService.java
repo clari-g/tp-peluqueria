@@ -30,10 +30,6 @@ public class PerroService {
         return perroRepository.buscarId(id).get();
     }
 
-    public Perro buscar(String nombre) {
-        return perroRepository.buscar(nombre).get();
-    }
-
     /* Guardar un nuevo Perro */
     public Perro guardar(Perro perro) {
         if (perro != null) {

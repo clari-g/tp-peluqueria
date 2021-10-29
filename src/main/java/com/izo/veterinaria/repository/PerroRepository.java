@@ -10,9 +10,6 @@ import javax.transaction.Transactional;
 import java.util.Optional;
 
 public interface PerroRepository extends JpaRepository <Perro, Long> {
-    @Query("SELECT o FROM Perro o WHERE o.nombre = ?1")
-    Optional<Perro> buscar(String nombre);
-
     @Query("SELECT p FROM Perro p WHERE p.id = ?1")
     Optional<Perro> buscarId(Long id);
 
